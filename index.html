@@ -6,6 +6,46 @@
     	content="width=device-width, initial-scale=1">
 </head>
 <body>
-This function should return the number of integers between 1 and n (inclusive) that have exactly k positive integers that evenly divide them. Recall that an integer a evenly divides an integer b if b / a has no remainder.
+Write a function that returns the number of integers between 1 and n (inclusive) that have exactly k positive integers that evenly divide them. Recall that an integer a evenly divides an integer b if b / a has no remainder.
+
+<pre>
+<code>
+#include &lt;stdio.h&gt;
+
+/**
+ * Class: CIS 22
+ * Solano Community College
+ *
+ * Prompt: Write a function that returns the number of integers between 1 and n (inclusive) that have exactly k positive integers that evenly divide them. Recall that an integer a evenly divides an integer b if b / a has no remainder.
+ */
+
+int foo2(int n, int k)
+{
+    int a = 1;
+    int b = 0;    
+    while (a < n + 1)
+    {
+        int c = 0;
+        int d = 1;    
+        while (d <= a)
+        {
+            if (1.0 * (a / d) == (1.0 * a) / d)
+                c++;
+            d++;
+        }
+        b += c == k;    
+        a++;
+    }
+    return b;
+}
+
+int main()
+{
+    printf("foo2(5,2) returned %d\n", foo2(5,2));
+    printf("foo2(12,3) returned %d\n", foo2(12,3));
+}
+</code>
+</pre>
+
 </body>
 </html>
